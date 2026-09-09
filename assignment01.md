@@ -26,7 +26,7 @@ Insert the following entry into the config file.
 networkingMode=mirrored
 ```
 
-Then, restart Debian and switch to super user.
+Then, restart Debian.
 Open `~/.bashrc` with vim, and insert the following commands.
 ```bash
 export http_proxy="http://127.0.0.1:7897"
