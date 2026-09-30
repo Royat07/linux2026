@@ -21,13 +21,14 @@ wsl --install -d Debian
 First, change WSL's networking mode to 'mirrored' mode.
 Direct to `%USERPROFILE%`, open `.wslconfig` with Notepad.
 Insert the following entry into the config file.
-```
+```ini
 [wsl2]
 networkingMode=mirrored
 ```
 
 Then, restart Debian.
 Open `~/.bashrc` with vim, and insert the following commands.
+
 ```bash
 export http_proxy="http://127.0.0.1:7897"
 export https_proxy="$http_proxy"
@@ -46,15 +47,12 @@ Save and quit vim and run the following command.
 source ~/.bashrc
 ```
 
-5. Install openssh
+5. Install openssh-server and net-tools
 
-Since I choose WSL instead of VMware, I can start Debian directly from Windows Terminal, so openssh is not necessary.
-But I still install it with following command.
 ```bash
-sudo apt install openssh-server
+sudo apt install openssh-server -y
+sudo apt install net-tools -y
 ```
-
-Enter `Y` to confirm installation.
 
 6. Set up assignment workspace
 
